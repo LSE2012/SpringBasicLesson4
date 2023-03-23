@@ -12,6 +12,7 @@ public class Cards {
     public Cards() {
     }
     @Id
+    @Column(name = "card_id")
     private Integer card_id;
 
     @Column
@@ -22,14 +23,8 @@ public class Cards {
     @NonNull
     private Integer currency_code;
 
-
-//    @OneToOne
-//    @JoinColumn(name = "currency_code")
-//    private List<Currency> currencyList;
-//
-//    @OneToOne
-//    @JoinColumn(name = "card_id")
-//    private List<Users> usersList;
+    @Column
+    private Integer user_id;
 
 
     public Integer getCard_id() {

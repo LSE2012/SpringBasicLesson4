@@ -24,6 +24,9 @@ public class Users {
     @Column
     private String email;
 
+    @Column
+    private Integer card_id;
+
 //    @OneToMany
 //    @JoinColumn(name = "card_id")
 //    private List<Cards> cardsList;
@@ -47,6 +50,14 @@ public class Users {
 
     public String getEmail() {
         return email;
+    }
+
+    public Integer getCard_id() {
+        return card_id;
+    }
+
+    public void setCard_id(Integer card_id) {
+        this.card_id = card_id;
     }
 
     public void setEmail(String email) {
