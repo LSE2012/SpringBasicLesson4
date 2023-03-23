@@ -1,4 +1,4 @@
-package entity;
+package edu.homework.lesson4.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

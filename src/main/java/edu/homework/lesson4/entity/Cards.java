@@ -1,4 +1,4 @@
-package entity;
+package edu.homework.lesson4.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -22,15 +22,14 @@ public class Cards {
     @NonNull
     private Integer currency_code;
 
-    @SuppressWarnings("JpaAttributeTypeInspection")
-    @OneToOne
-    @JoinColumn(name = "currency_code")
-    private List<Currency> currencyList;
 
-    @SuppressWarnings("JpaAttributeTypeInspection")
-    @OneToOne
-    @JoinColumn(name = "card_id")
-    private List<Users> usersList;
+//    @OneToOne
+//    @JoinColumn(name = "currency_code")
+//    private List<Currency> currencyList;
+//
+//    @OneToOne
+//    @JoinColumn(name = "card_id")
+//    private List<Users> usersList;
 
 
     public Integer getCard_id() {
@@ -57,11 +56,11 @@ public class Cards {
         this.currency_code = currency_code;
     }
 
-    public List<Currency> getCurrencyList() {
-        return currencyList;
-    }
-
-    public List<Users> getUsersList() {
-        return usersList;
-    }
+//    public List<Currency> getCurrencyList() {
+//        return currencyList;
+//    }
+//
+//    public List<Users> getUsersList() {
+//        return usersList;
+//    }
 }
