@@ -60,4 +60,8 @@ public class Cards {
     public List<Currency> getCurrencyList() {
         return currencyList;
     }
+
+    public List<Users> getUsersList() {
+        return usersList;
+    }
 }
