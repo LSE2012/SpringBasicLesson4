@@ -8,4 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CardsRepository extends JpaRepository<Cards,Integer> {
+    List<Cards> findAllByNumberIs(Integer cardNumber);
 }

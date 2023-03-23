@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NonNull;
 
-import java.util.List;
-
 @Data
 @Entity
 public class Users {
@@ -26,11 +24,6 @@ public class Users {
 
     @Column
     private Integer card_id;
-
-//    @OneToMany
-//    @JoinColumn(name = "card_id")
-//    private List<Cards> cardsList;
-
 
     public Integer getId() {
         return id;
@@ -63,8 +56,6 @@ public class Users {
     public void setEmail(String email) {
         this.email = email;
     }
-//    public List<Cards> getCardsList() {
-//        return cardsList;
-//    }
+
 
 }

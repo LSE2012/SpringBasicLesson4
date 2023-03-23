@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NonNull;
 
-import java.util.List;
-
 @Data
 @Entity
 public class Cards {
@@ -51,11 +49,5 @@ public class Cards {
         this.currency_code = currency_code;
     }
 
-//    public List<Currency> getCurrencyList() {
-//        return currencyList;
-//    }
-//
-//    public List<Users> getUsersList() {
-//        return usersList;
-//    }
+
 }
