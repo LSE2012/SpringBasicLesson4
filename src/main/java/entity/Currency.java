@@ -5,24 +5,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
-import lombok.NonNull;
 
 @Data
 @Entity
-public class Users {
-    public Users() {
-
-    }
+public class Currency {
     @Id
     @GeneratedValue
     private Integer id;
 
     @Column
-    @NonNull
     private String name;
 
     @Column
-    private String email;
+    private Integer code;
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
+    public Integer getId() {
+        return id;
+    }
 }
