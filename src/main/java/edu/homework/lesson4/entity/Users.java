@@ -1,10 +1,8 @@
-package entity;
+package edu.homework.lesson4.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NonNull;
-
-import java.util.List;
 
 @Data
 @Entity
@@ -12,9 +10,9 @@ public class Users {
     public Users() {
     }
 
-
     @Id
-    @GeneratedValue
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column
@@ -24,12 +22,8 @@ public class Users {
     @Column
     private String email;
 
-
-
-    @OneToMany
-    @JoinColumn(name = "card_id")
-    private List<Cards> cardsList;
-
+    @Column
+    private Integer card_id;
 
     public Integer getId() {
         return id;
@@ -51,11 +45,17 @@ public class Users {
         return email;
     }
 
+    public Integer getCard_id() {
+        return card_id;
+    }
+
+    public void setCard_id(Integer card_id) {
+        this.card_id = card_id;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
-    public List<Cards> getCardsList() {
-        return cardsList;
-    }
+
 
 }
