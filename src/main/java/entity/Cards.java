@@ -10,7 +10,6 @@ import lombok.NonNull;
 @Entity
 public class Cards {
     public Cards() {
-
     }
     @Id
     private Integer card_id;
