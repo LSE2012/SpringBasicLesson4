@@ -28,4 +28,12 @@ class SpringBasicLesson4ApplicationTests {
 		users.forEach(System.out::println);
 	}
 
+	@Test
+	void testGetUserByEmail() {
+		var userEmail = "tester1.tester@gmail.com";
+		var users = usersRepository.getUsersByEmailIs(userEmail);
+		System.out.println("====== testGetUserByEmail ========");
+		users.forEach(System.out::println);
+	}
+
 }
