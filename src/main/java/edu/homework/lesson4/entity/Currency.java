@@ -19,7 +19,7 @@ public class Currency {
     private Integer code;
 
     @OneToMany
-    @JoinColumn(name = "currency_code")
+    @JoinColumn(name = "currencyCode")
     private List<Cards> cardsList;
 
     public Integer getId() {

@@ -23,7 +23,7 @@ public class Users {
     private String email;
 
     @Column
-    private Integer card_id;
+    private Integer cardId;
 
     public Integer getId() {
         return id;
@@ -45,12 +45,12 @@ public class Users {
         return email;
     }
 
-    public Integer getCard_id() {
-        return card_id;
+    public Integer getCardId() {
+        return cardId;
     }
 
-    public void setCard_id(Integer card_id) {
-        this.card_id = card_id;
+    public void setCardId(Integer cardId) {
+        this.cardId = cardId;
     }
 
     public void setEmail(String email) {

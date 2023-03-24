@@ -10,8 +10,8 @@ public class Cards {
     public Cards() {
     }
     @Id
-    @Column(name = "card_id")
-    private Integer card_id;
+    @Column(name = "cardId")
+    private Integer cardId;
 
     @Column
     @NonNull
@@ -19,18 +19,18 @@ public class Cards {
 
     @Column
     @NonNull
-    private Integer currency_code;
+    private Integer currencyCode;
 
     @Column
-    private Integer user_id;
+    private Integer userId;
 
 
-    public Integer getCard_id() {
-        return card_id;
+    public Integer getCardId() {
+        return cardId;
     }
 
-    public void setCard_id(Integer card_id) {
-        this.card_id = card_id;
+    public void setCard_id(Integer cardId) {
+        this.cardId = cardId;
     }
 
     public Integer getNumber() {
@@ -41,12 +41,12 @@ public class Cards {
         this.number = number;
     }
 
-    public Integer getCurrency_code() {
-        return currency_code;
+    public Integer getCurrencyCode() {
+        return currencyCode;
     }
 
-    public void setCurrency_code(Integer currency_code) {
-        this.currency_code = currency_code;
+    public void setCurrencyCode(Integer currencyCode) {
+        this.currencyCode = currencyCode;
     }
 
 

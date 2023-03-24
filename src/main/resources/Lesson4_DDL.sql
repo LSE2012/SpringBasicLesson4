@@ -1,11 +1,10 @@
 create table public.users
 (
-    id      integer generated always as identity
+    id    integer generated always as identity
         constraint users_pk
             primary key,
-    name    text,
-    email   text,
-    card_id integer
+    name  text,
+    email text
 );
 
 comment on table public.users is 'user';
@@ -27,12 +26,12 @@ alter table public.currency
 
 create table public.cards
 (
-    card_id       serial,
-    number        integer,
-    currency_code integer
+    cardid       integer default nextval('cards_card_id_seq'::regclass) not null,
+    number       integer,
+    currencycode integer
         constraint cards_currency_code_fk
             references public.currency (code),
-    user_id       integer
+    userid       integer
 );
 
 alter table public.cards
