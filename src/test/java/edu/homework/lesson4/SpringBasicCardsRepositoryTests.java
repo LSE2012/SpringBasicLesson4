@@ -4,9 +4,11 @@ import edu.homework.lesson4.entity.Cards;
 import edu.homework.lesson4.repository.CardsCrudRepository;
 import edu.homework.lesson4.repository.CardsRepository;
 import edu.homework.lesson4.services.CardsService;
+import lombok.val;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Random;
@@ -80,7 +82,7 @@ public class SpringBasicCardsRepositoryTests {
         cards.setNumber(789654123);
         cards.setCurrencycode(840);
         cards.setUserid(3);
-        cardsService.save(null, cards);
+        cardsService.save(cards);
         cardsService.findAll().forEach(System.out::println);
     }
 
@@ -101,6 +103,29 @@ public class SpringBasicCardsRepositoryTests {
     public void testCardServicesDelete() {
         var count = cardsRepository.count();
         cardsService.delete(Math.toIntExact(count));
+    }
+
+    @Test
+    public void testCardsRepositoryFindAllByNumber() {
+        var cardID = 2;
+        cardsService = new CardsService(cardsRepository);
+        Cards card = cardsService.findOne(cardID);
+        System.out.println("beforeCardNumber = " + card.getNumber());
+        var cards = cardsRepository.findAllByNumberIs(card.getNumber());
+        System.out.println("afterCardNumber  = " + cards.get(0).getNumber());
+    }
+
+    @Test
+    public void testCardRepositoryDeleteCardByNumber() {
+        int cardNumber = 77777;
+        var cards = new Cards();
+        Cards cards2;
+        cards.setNumber(cardNumber);
+        cards.setCurrencycode(978);
+        cards.setUserid(15);
+        cardsService.save(cards);
+        cards2 = cardsRepository.getDistinctFirstByNumberIs(cardNumber);
+        System.out.println("cardByNumber == " + cards2);
 
     }
 
