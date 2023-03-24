@@ -4,14 +4,11 @@ import edu.homework.lesson4.entity.Cards;
 import edu.homework.lesson4.repository.CardsCrudRepository;
 import edu.homework.lesson4.repository.CardsRepository;
 import edu.homework.lesson4.services.CardsService;
-import lombok.val;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Random;
 
 @SpringBootTest
 public class SpringBasicCardsRepositoryTests {
@@ -34,7 +31,7 @@ public class SpringBasicCardsRepositoryTests {
     @Test
     public void testCardsFindAll() {
         var cardID = 1;
-        List<Cards> cardsList =  cardsRepository.findAllByCardId(cardID);
+        List<Cards> cardsList = cardsRepository.findAllByCardId(cardID);
         cardsList.forEach(System.out::println);
     }
 
@@ -73,7 +70,7 @@ public class SpringBasicCardsRepositoryTests {
         var cardID = 2;
         cardsService = new CardsService(cardsRepository);
         Cards card = cardsService.findOne(cardID);
-        System.out.println("card = "  + card.toString());
+        System.out.println("card = " + card.toString());
     }
 
     @Test
@@ -90,13 +87,13 @@ public class SpringBasicCardsRepositoryTests {
     @Test
     public void testCardServiceUpdate() {
         var cards = new Cards();
-        var cardId = 2 ;
+        var cardId = 2;
         cards.setNumber(123409871);
         cards.setCurrencycode(840);
         cards.setUserid(cardId);
         cardsService.update(2, cards);
         Cards card = cardsService.findOne(cardId);
-        System.out.println("card = "  + card.toString());
+        System.out.println("card = " + card.toString());
     }
 
     @Test
