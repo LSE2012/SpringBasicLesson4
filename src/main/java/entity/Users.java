@@ -12,7 +12,6 @@ public class Users {
     public Users() {
     }
 
-
     @Id
     @GeneratedValue
     private Integer id;
@@ -23,8 +22,6 @@ public class Users {
 
     @Column
     private String email;
-
-
 
     @OneToMany
     @JoinColumn(name = "card_id")

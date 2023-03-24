@@ -26,16 +26,14 @@ alter table public.currency
 
 create table public.cards
 (
-    card_id       serial
-        constraint cards_users_id_fk
-            references public.users,
-    number        integer,
-    currency_code integer
+    cardid       integer default nextval('cards_card_id_seq'::regclass) not null,
+    number       integer,
+    currencycode integer
         constraint cards_currency_code_fk
-            references public.currency (code)
+            references public.currency (code),
+    userid       integer
 );
 
 alter table public.cards
     owner to postgres;
-
 
