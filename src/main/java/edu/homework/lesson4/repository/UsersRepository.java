@@ -14,4 +14,8 @@ public interface UsersRepository extends JpaRepository<Users, Integer> {
 
     List<Users> findUsersByEmailIs(String email);
 
+    List<Users> getByEmailContains(String email);
+
+    List<Users> searchByNameContains(String name);
+
 }
