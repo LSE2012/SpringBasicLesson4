@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface CardsRepository extends JpaRepository<Cards,Integer> {
     List<Cards> findAllByCardId(int cardId);
+    List<Cards> findAllByNumberIs(int number);
+    Cards deleteCardsByNumberIs(int number);
 
 }

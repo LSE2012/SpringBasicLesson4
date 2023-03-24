@@ -48,4 +48,18 @@ class SpringBasicLesson4ApplicationTests {
 		usersList.forEach(System.out::println);
 	}
 
+	@Test
+	void testUsersRepository() {
+		List<Users> userList;
+		userList = usersRepository.getByEmailContains("@gmail");
+		userList.forEach(System.out::println);
+	}
+
+	@Test
+	void testUsersRepositoryGetEmail() {
+		List<Users> userList;
+		userList = usersRepository.searchByNameContains("Tester");
+		userList.forEach(System.out::println);
+	}
+
 }
