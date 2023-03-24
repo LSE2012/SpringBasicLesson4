@@ -12,7 +12,7 @@ public class Cards {
     public Cards() {
     }
     @Id
-    private Integer card_id;
+    private Integer cardid;
 
     @Column
     @NonNull
@@ -20,25 +20,25 @@ public class Cards {
 
     @Column
     @NonNull
-    private Integer currency_code;
+    private Integer currencyCode;
 
     @SuppressWarnings("JpaAttributeTypeInspection")
     @OneToOne
-    @JoinColumn(name = "currency_code")
+    @JoinColumn(name = "currencyCode")
     private List<Currency> currencyList;
 
     @SuppressWarnings("JpaAttributeTypeInspection")
     @OneToOne
-    @JoinColumn(name = "card_id")
+    @JoinColumn(name = "cardid")
     private List<Users> usersList;
 
 
-    public Integer getCard_id() {
-        return card_id;
+    public Integer getCardId() {
+        return cardid;
     }
 
-    public void setCard_id(Integer card_id) {
-        this.card_id = card_id;
+    public void setCardId(Integer cardId) {
+        this.cardid = cardId;
     }
 
     public Integer getNumber() {
@@ -49,12 +49,12 @@ public class Cards {
         this.number = number;
     }
 
-    public Integer getCurrency_code() {
-        return currency_code;
+    public Integer getCurrencyCode() {
+        return currencyCode;
     }
 
-    public void setCurrency_code(Integer currency_code) {
-        this.currency_code = currency_code;
+    public void setCurrencyCode(Integer currencyCode) {
+        this.currencyCode = currencyCode;
     }
 
     public List<Currency> getCurrencyList() {
