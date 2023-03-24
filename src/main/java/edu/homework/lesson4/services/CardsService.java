@@ -27,7 +27,7 @@ public class CardsService {
     }
 
     @Transactional
-    public void save(Integer cardId, Cards cards) {
+    public void save( Cards cards) {
         cardsRepository.save(cards);
     }
 
