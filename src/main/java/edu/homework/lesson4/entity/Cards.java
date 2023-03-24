@@ -10,7 +10,7 @@ public class Cards {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "cardid")
-    private int cardid;
+    private int cardId;
     @Basic
     @Column(name = "number")
     private Integer number;
