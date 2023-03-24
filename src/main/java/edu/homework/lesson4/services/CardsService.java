@@ -5,7 +5,6 @@ import edu.homework.lesson4.repository.CardsRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +27,7 @@ public class CardsService {
     }
 
     @Transactional
-    public void save(int cardId, Cards cards) {
+    public void save(Integer cardId, Cards cards) {
         cardsRepository.save(cards);
     }
 
