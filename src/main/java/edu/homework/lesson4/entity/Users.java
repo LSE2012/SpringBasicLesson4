@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NonNull;
 
+import java.util.Collection;
+
 @Data
 @Entity
 public class Users {
@@ -21,9 +23,6 @@ public class Users {
 
     @Column
     private String email;
-
-    @Column
-    private Integer card_id;
 
     public Integer getId() {
         return id;
@@ -45,17 +44,8 @@ public class Users {
         return email;
     }
 
-    public Integer getCard_id() {
-        return card_id;
-    }
-
-    public void setCard_id(Integer card_id) {
-        this.card_id = card_id;
-    }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
 
 }

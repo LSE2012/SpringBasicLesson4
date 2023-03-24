@@ -18,9 +18,6 @@ public class Currency {
     @Column
     private Integer code;
 
-    @OneToMany
-    @JoinColumn(name = "currency_code")
-    private List<Cards> cardsList;
 
     public Integer getId() {
         return id;
@@ -46,7 +43,4 @@ public class Currency {
         this.code = code;
     }
 
-    public List<Cards> getCardsList() {
-        return cardsList;
-    }
 }

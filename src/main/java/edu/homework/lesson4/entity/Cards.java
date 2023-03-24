@@ -2,52 +2,23 @@ package edu.homework.lesson4.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NonNull;
 
-@Data
 @Entity
+@Data
+@Table(name = "cards", schema = "public", catalog = "lesson4_db")
 public class Cards {
-    public Cards() {
-    }
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "card_id")
-    private Integer card_id;
-
-    @Column
-    @NonNull
+    @Column(name = "cardid")
+    private int cardId;
+    @Basic
+    @Column(name = "number")
     private Integer number;
-
-    @Column
-    @NonNull
-    private Integer currency_code;
-
-    @Column
-    private Integer user_id;
-
-
-    public Integer getCard_id() {
-        return card_id;
-    }
-
-    public void setCard_id(Integer card_id) {
-        this.card_id = card_id;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    public Integer getCurrency_code() {
-        return currency_code;
-    }
-
-    public void setCurrency_code(Integer currency_code) {
-        this.currency_code = currency_code;
-    }
-
+    @Basic
+    @Column(name = "currencycode")
+    private Integer currencycode;
+    @Basic
+    @Column(name = "userid")
+    private Integer userid;
 
 }
